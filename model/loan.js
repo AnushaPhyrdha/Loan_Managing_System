@@ -13,7 +13,17 @@ const PostSchema = mongoose.Schema(
     installments_tobe_paid: { type: "number" },
     amount_paid: { type: "number", default: 0 },
     amount_tobe_paid: { type: "number" },
-    transactions: { type: "string", default: null },
+    transactions: [
+      {
+        transaction_type: {
+          type: String,
+          enum: ["Credited", "Debited"],
+          default: null,
+        },
+        amount: { type: Number, default: null },
+        date: { type: Date, default: null },
+      },
+    ],
   },
   { timestamps: true }
 );
