@@ -1,0 +1,5 @@
+Sample Query for the filter condition
+{
+    "condition": {"study": "4", "marks":{"$gte": "70"}},
+    "projection": {"_id":0, "roll_number":1, "marks":1, "student_name":1}
+}
